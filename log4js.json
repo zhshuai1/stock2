@@ -1,7 +1,18 @@
-{ "appenders": [ {
-    "type": "dateFile",
-    "filename": "logs/app.log",
-    "pattern": "-yyyy-MM-dd",
-    "alwaysIncludePattern": false
-  } ]
+{
+  "appenders": {
+    "stock": {
+      "type": "dateFile",
+      "filename": "logs/app.log",
+      "pattern": "-yyyy-MM-dd",
+      "alwaysIncludePattern": false
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": [
+        "stock"
+      ],
+      "level": "info"
+    }
+  }
 }
