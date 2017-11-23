@@ -1,0 +1,14 @@
+{
+  "name": "Stock2",
+  "description": "This project will retrieve the stock data from the website, and analyze them.",
+  "version": "0.0.1",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhshuai1/stock2"
+  },
+  "dependencies": {
+    "mysql": "2.15.0",
+    "log4js": "2.3.12"
+  }
+}

@@ -1,0 +1,15 @@
+This is my trial on stock.
+
+/************************************/
+To make the package work, you should
+run the following command first:
+
+$ npm install
+
+This command will install all the js
+dependencies listed in the package.json
+
+Then you could run the following command
+to run the function:
+
+$ node main.js
