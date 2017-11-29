@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 var fileName = __filename.match(/[^\\\/]*$/);
 var argv = process.argv;
 var printHelp = function () {
