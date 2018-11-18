@@ -22,10 +22,17 @@ var days = +argv[3] || 10;
 
 
 var Stock = require('./lib/common');
-var stocks = Stock.fileReader().getStocks('./stocks/' + stockType + '.stock');
 var poolSize = 20;
-var pool = Stock.pool(stockType, stocks, days, poolSize);
-pool.start();
+var gatherer = Stock.gatherer();
+gatherer.getAllStocks(stockType).then(function (stocks) {
+        //var pool = Stock.pool(stockType, stocks, days, poolSize);
+        //pool.start();
+        console.log(stocks);
+    },
+    function (erroInfo) {
+        console.log(erroInfo)
+    });
+
 process.on('uncaughtException', function (error) {
     console.log(error);
 });
