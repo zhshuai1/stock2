@@ -24,10 +24,13 @@ var days = +argv[3] || 10;
 var Stock = require('./lib/common');
 var poolSize = 20;
 var gatherer = Stock.gatherer();
+var log = Stock.logger("main")
 gatherer.getAllStocks(stockType).then(function (stocks) {
-        //var pool = Stock.pool(stockType, stocks, days, poolSize);
-        //pool.start();
-        console.log(stocks);
+        log.info("All stocks are： " + JSON.stringify(stocks))
+        var pool = Stock.pool(stockType, stocks.map(s => s.code), days, poolSize);
+        pool.start();
+        console.log(stocks.length);
+        console.log(stocks[0].code);
     },
     function (erroInfo) {
         console.log(erroInfo)
