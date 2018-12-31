@@ -27,10 +27,16 @@ var gatherer = Stock.gatherer();
 var log = Stock.logger("main")
 gatherer.getAllStocks(stockType).then(function (stocks) {
         log.info("All stocks are： " + JSON.stringify(stocks))
-        var pool = Stock.pool(stockType, stocks.map(s => s.code), days, poolSize);
+        var codes = stocks.map(s => s.code)
+        if (stockType == "sh") {
+            codes.push("000001")
+        }
+        else if (stockType == "sz") {
+            codes.push("399001")
+            codes.push("399006")
+        }
+        var pool = Stock.pool(stockType, codes, days, poolSize);
         pool.start();
-        console.log(stocks.length);
-        console.log(stocks[0].code);
     },
     function (erroInfo) {
         console.log(erroInfo)
