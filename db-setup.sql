@@ -18,8 +18,10 @@ CREATE TABLE `run` (
   `strategy` varchar(255) DEFAULT NULL,
   `tradingType` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-)
+);
 -- setup user
-create user zhangsh;
-GRANT ALL ON stock.stock TO 'zhangsh'@'localhost' IDENTIFIED BY '000000';
+--create user zhangsh;
+--GRANT ALL ON stock.stock TO 'zhangsh'@'localhost' IDENTIFIED BY '000000';
+CREATE USER zhangsh IDENTIFIED BY '000000';
+GRANT ALL ON stock.* TO 'zhangsh'@'localhost';
 
