@@ -23,5 +23,6 @@ CREATE TABLE `run` (
 --create user zhangsh;
 --GRANT ALL ON stock.stock TO 'zhangsh'@'localhost' IDENTIFIED BY '000000';
 CREATE USER zhangsh IDENTIFIED BY '000000';
+-- CREATE USER zhangsh@localhost IDENTIFIED WITH mysql_native_password BY '000000'; -- node campatible
 GRANT ALL ON stock.* TO 'zhangsh'@'localhost';
 
