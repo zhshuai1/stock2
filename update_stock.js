@@ -22,7 +22,7 @@ var days = +argv[3] || 10;
 
 
 var Stock = require('./lib/common');
-var poolSize = 20;
+var poolSize = 10;
 var gatherer = Stock.gatherer();
 var log = Stock.logger("main")
 gatherer.getAllStocks(stockType).then(function (stocks) {
